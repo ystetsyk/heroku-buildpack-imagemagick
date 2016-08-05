@@ -44,6 +44,11 @@ if [ ! -f $CACHE_FILE ]; then
   cd $VENDOR_DIR
   REL_INSTALL_DIR="imagemagick"
   tar czf $REL_INSTALL_DIR.tar.gz $REL_INSTALL_DIR
+  
+  if [ ! -d $CACHE_DIR ]; then
+    mkdir -p $CACHE_DIR
+  fi
+  
   mv $REL_INSTALL_DIR.tar.gz $CACHE_FILE
 
 else
