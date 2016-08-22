@@ -10,7 +10,7 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 VENDOR_DIR="$BUILD_DIR/vendor"
 INSTALL_DIR="$VENDOR_DIR/imagemagick"
-IMAGE_MAGICK_VERSION="${IMAGE_MAGICK_VERSION:-7.0.2-9}"
+IMAGE_MAGICK_VERSION="${IMAGE_MAGICK_VERSION:-6.9.4-10}"
 CACHE_FILE="$CACHE_DIR/imagemagick-$IMAGE_MAGICK_VERSION.tar.gz"
 
 if [ ! -f $CACHE_FILE ]; then
@@ -77,5 +77,4 @@ mkdir -p $(dirname $PROFILE_PATH)
 echo "export PATH=$ACTUAL_INSTALL_PATH/bin:\$PATH" >> $PROFILE_PATH
 echo "export LD_RUN_PATH=$ACTUAL_INSTALL_PATH/lib:\$LD_RUN_PATH" >> $PROFILE_PATH
 echo "export MAGICK_CONFIGURE_PATH=$ACTUAL_INSTALL_PATH" >> $PROFILE_PATH
-ldconfig in /usr/local/lib
 echo "-----> Done updating environment variables. All set for ImageMagick."
