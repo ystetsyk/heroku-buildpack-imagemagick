@@ -74,8 +74,8 @@ echo "-----> Updating environment variables"
 PROFILE_PATH="$BUILD_DIR/.profile.d/imagemagick.sh"
 ACTUAL_INSTALL_PATH="$HOME/vendor/imagemagick"
 mkdir -p $(dirname $PROFILE_PATH)
+ldconfig in /usr/local/lib
 echo "export PATH=$ACTUAL_INSTALL_PATH/bin:\$PATH" >> $PROFILE_PATH
 echo "export LD_RUN_PATH=$ACTUAL_INSTALL_PATH/lib:\$LD_RUN_PATH" >> $PROFILE_PATH
 echo "export MAGICK_CONFIGURE_PATH=$ACTUAL_INSTALL_PATH" >> $PROFILE_PATH
-echo "ldconfig in /usr/shared/lib"
 echo "-----> Done updating environment variables. All set for ImageMagick."
