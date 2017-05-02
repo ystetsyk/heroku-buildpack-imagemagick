@@ -69,6 +69,14 @@ cat > $INSTALL_DIR/policy.xml <<EOF
 </policymap>
 EOF
 
+echo "-----> Writing config file"
+cat > $INSTALL_DIR/magic.xml <<EOF
+<magicmap>
+ <magic name="JPEG" offset="0" target="\377\330\377"/> 
+ <magic name="PNG" offset="0" target="\211PNG\r\n\032\n"/> 
+</magicmap>
+EOF
+
 # update PATH and LD_LIBRARY_PATH
 echo "-----> Updating environment variables"
 PROFILE_PATH="$BUILD_DIR/.profile.d/imagemagick.sh"
